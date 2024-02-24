@@ -7,6 +7,8 @@ import SchoolIcon from '@mui/icons-material/School';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import ArticleIcon from '@mui/icons-material/Article';
 import { useRouter } from "next/navigation";
 
 const Dashboard = () => {
@@ -23,7 +25,7 @@ const Dashboard = () => {
     router.push("/curriculum");
   };
   return (
-    <div className="text-black container bg-cyan-800 mx-auto my-5 p-10 space-y-10 rounded-2xl max-h-[50rem]">
+    <div className="text-black container bg-cyan-800 mx-auto my-5 p-10 space-y-10 rounded-2xl max-h-[50rem] max-w-5xl text-2xl">
       <div className="flex flex-row space-x-10">
 
         <div onClick={handleClick} className='container p-6 bg-white flex flex-col rounded-2xl hover:bg-gray-100 hover:shadow-2xl hover:scale-105'>
@@ -39,15 +41,35 @@ const Dashboard = () => {
           <hr className="w-48 h-1 mx-auto my-0 bg-black border-0 rounded md:my-1 dark:bg-gray-700"></hr>
           <h6 className="text-base text-slate-600">Define threshold levels, Check Attainment</h6>
         </div>
-      </div>
+      
 
-      <div className='flex flex-row space-x-10'>
+      
         <div className='container p-6 bg-white flex flex-col rounded-2xl hover:bg-gray-100 hover:shadow-2xl hover:scale-105'>
           <AnalyticsIcon style={{ color: 'black', width: '6rem', height: '6rem', margin: 'auto' }} />
           <div className="mx-auto">Resources</div>
           <hr className="w-48 h-1 mx-auto my-0 bg-black border-0 rounded md:my-1 dark:bg-gray-700"></hr>
           <h6 className="text-base text-slate-600">Watch video tutorials, read books, know how to use this system as an educator</h6>
         </div>
+        </div>
+        <div className='flex flex-row space-x-10'>
+        <div
+          // onClick={() => { navigate('./profile') }}
+          className='container p-6 bg-white flex flex-col rounded-2xl hover:bg-gray-100 hover:shadow-2xl hover:scale-105'>
+          <AssessmentIcon style={{color:'black', width:'6rem', height:'6rem', margin:'auto'}}/>
+          <div className="mx-auto">Assessment</div>
+          <hr className="w-48 h-1 mx-auto my-0 bg-black border-0 rounded md:my-1 dark:bg-gray-700"></hr>
+          <h6 className="text-base text-slate-600">Manage, add, edit CIA and ECE Question papers and Assessment Occassions</h6>
+        </div>
+
+        <div
+          // onClick={() => { navigate('./profile') }}
+          className='container p-6 bg-white flex flex-col rounded-2xl hover:bg-gray-100 hover:shadow-2xl hover:scale-105'>
+          <ArticleIcon style={{ color: 'black', width: '6rem', height: '6rem', margin: 'auto' }} />
+          <div className="mx-auto">Reports</div>
+          <hr className="w-48 h-1 mx-auto my-0 bg-black border-0 rounded md:my-1 dark:bg-gray-700"></hr>
+          <h6 className="text-base text-slate-600">Genrate various reports on the basis pg mappings and generate course plans</h6>
+        </div>
+
         <div
           // onClick={() => { navigate('./profile') }}
           className='container p-6 bg-white flex flex-col rounded-2xl hover:bg-gray-100 hover:shadow-2xl hover:scale-105'>
