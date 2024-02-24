@@ -6,4 +6,4 @@ const curriculum = () => {
   )
 }
 
-export default curriculum;
+export default curriculum
