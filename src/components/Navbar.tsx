@@ -11,7 +11,7 @@ const Navbar = () => {
         <ul className="flex justify-between items-center">
           <div>
             <Link href="/">
-              <li className="text-white hover:text-blue-500 cursor-pointer transition duration-300">Home</li>
+              <li className="text-white hover:text-blue-500 cursor-pointer transition duration-300">Curricator</li>
             </Link>
           </div>
           <div className="flex gap-10">
