@@ -17,6 +17,7 @@ const DepartmentSchema = new mongoose.Schema({
   head: { type: String }
 });
 
+
 // Define Program Schema
 const ProgramSchema = new mongoose.Schema({
   name: { type: String },

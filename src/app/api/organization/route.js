@@ -17,10 +17,3 @@ export async function GET(){
     return NextResponse.json({ organizations });
 }
 
-// export async function DELETE(req) {
-//     const id = request.nextUrl.searchParams.get("id");
-//     await connectMongoDB();
-//     await Organization.findByIdAndDelete(id);
-//     return NextResponse.json({ message: "Oragnization deleted" }, { status: 200 });
-// }
-
