@@ -22,8 +22,9 @@ const DepartmentSchema = new mongoose.Schema({
 const ProgramSchema = new mongoose.Schema({
   name: { type: String },
   owner: { type: String },
-  description: { type: String }
-});
+  description: { type: String },
+  departmentId: {type: mongoose.Schema.Types.ObjectId, ref: 'Department' }}
+);
 
 // Define Curriculum Schema
 const CurriculumSchema = new mongoose.Schema({

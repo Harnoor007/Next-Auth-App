@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Organization } from "@/models/schema";
 import { HiPencilAlt } from "react-icons/hi";
 
-export default function AddOrg() {
+export default function AddOrg() { 
   const [name, setName] = useState("");
   const [vision, setVision] = useState("");
   const [mission, setMission] = useState("");
