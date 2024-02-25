@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import { HomeIcon, InboxIcon, HomeModernIcon, AcademicCapIcon, GlobeAsiaAustraliaIcon, GlobeEuropeAfricaIcon, ArrowsUpDownIcon, BookmarkIcon } from "@heroicons/react/24/solid";
-
+import Org from '@/components/curriculumDesign/org';
 import Department from "@/components/curriculumDesign/department"; // Import the Department component
 import Co from "@/components/curriculumDesign/co";
 import Program from '@/components/curriculumDesign/program';
@@ -74,6 +74,7 @@ export default function DefaultSidebar() {
         {selectedComponent === 'po' && <Po />}
         {selectedComponent === 'course' && <CourseList   />}
         {selectedComponent === 'co' && <Co />}
+        {selectedComponent === 'organization' && <Org />}
 
       </div>
     </div>
