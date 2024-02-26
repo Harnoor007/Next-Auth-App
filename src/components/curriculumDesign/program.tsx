@@ -17,7 +17,7 @@ export default function ProgramComponent() {
         fetchPrograms();
     }, []); 
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e:any) => {
         e.preventDefault();
  
         if (!name) {
@@ -116,7 +116,7 @@ export default function ProgramComponent() {
             <div>
                 <h2 className="text-xl font-semibold mt-8 mb-4">Programs:</h2>
                 <ul>
-                    {programs.map((program) => (
+                    {programs.map((program:any) => (
                         <li key={program._id} className="flex items-center gap-4">
                             <span>{program.name}</span>
                             <span>{program.owner}</span>

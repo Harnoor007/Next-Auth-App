@@ -19,7 +19,7 @@ export default function AddDepartment() {
     getDepartments();
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e : any) => {
     e.preventDefault();
 
     if (!deptId) {
@@ -126,7 +126,7 @@ export default function AddDepartment() {
       <div>
         <h2 className="text-xl font-semibold mt-8 mb-4">Departments:</h2>
         <ul>
-          {departments.map((dept) => (
+          {departments.map((dept: any) => (
             <li key={dept._id} className="flex items-center gap-4">
               <span>{dept.name}</span>
               <span>{dept.deptId}</span>

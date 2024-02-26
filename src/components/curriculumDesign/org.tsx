@@ -16,7 +16,7 @@ export default function AddOrg() {
     getOrg();
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     if (!name) {
@@ -99,7 +99,7 @@ export default function AddOrg() {
       <div>
         <h2 className="text-xl font-semibold mt-8 mb-4">Organizations:</h2>
         <ul>
-          {organizations.map((org) => (
+          {organizations.map((org: any) => (
             <li key={org._id} className="flex items-center gap-4">
               <span>{org.name}</span>
               <span>{org.vision}</span>
