@@ -7,6 +7,7 @@ import { HiPencilAlt } from "react-icons/hi";
 
 export default function AddDepartment() {
   const [name, setName] = useState("");
+  const [deptId, setDeptId] = useState("");
   const [vision, setVision] = useState("");
   const [mission, setMission] = useState("");
   const [organization, setOrganization] = useState("");
@@ -21,7 +22,7 @@ export default function AddDepartment() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!name) {
+    if (!deptId) {
       alert("Name required.");
       return;
     }
@@ -32,7 +33,7 @@ export default function AddDepartment() {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ name, vision, mission, organizationName: organization, head }), // Change organizationName to organization
+        body: JSON.stringify({ name, deptId, vision, mission, organizationName: organization, head }), // Change organizationName to organization
       });
 
       if (res.ok) {
@@ -71,7 +72,15 @@ export default function AddDepartment() {
           value={name}
           className="border border-slate-500 px-8 py-2"
           type="text"
-          placeholder="Name"
+          placeholder="Dept. Name"
+        />
+
+        <input
+          onChange={(e) => setDeptId(e.target.value)}
+          value={deptId}
+          className="border border-slate-500 px-8 py-2"
+          type="number"
+          placeholder="Dept. Id (Only one id must be asociated to a single dept.)"
         />
 
         <input
@@ -79,7 +88,7 @@ export default function AddDepartment() {
           value={vision}
           className="border border-slate-500 px-8 py-2"
           type="text"
-          placeholder="Vision"
+          placeholder="Vision of Dept."
         />
 
         <input
@@ -87,7 +96,7 @@ export default function AddDepartment() {
           value={mission}
           className="border border-slate-500 px-8 py-2"
           type="text"
-          placeholder="Mission"
+          placeholder="Mission of Dept."
         />
 
         <input
@@ -95,7 +104,7 @@ export default function AddDepartment() {
           value={organization}
           className="border border-slate-500 px-8 py-2"
           type="text"
-          placeholder="Organization (Should be a valid name from organizations)"
+          placeholder="Organization (Should be a same name from added organizations)"
         />
 
         <input
@@ -120,11 +129,12 @@ export default function AddDepartment() {
           {departments.map((dept) => (
             <li key={dept._id} className="flex items-center gap-4">
               <span>{dept.name}</span>
+              <span>{dept.deptId}</span>
               <span>{dept.vision}</span>
               <span>{dept.mission}</span>
               <span>{dept.organization.name}</span>
               <span>{dept.head}</span>
-              {/* You can add more details here */}
+              {/* You can add more details here */} 
             </li>
           ))}
         </ul>

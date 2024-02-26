@@ -1,5 +1,6 @@
 // Import Mongoose library
 const mongoose = require('mongoose');
+const { type } = require('os');
 
 // Define Organization Schema
 const OrganizationSchema = new mongoose.Schema({
@@ -11,6 +12,7 @@ const OrganizationSchema = new mongoose.Schema({
 // Define Department Schema
 const DepartmentSchema = new mongoose.Schema({
   name: { type: String },
+  deptId: {type: Number, required: true, unique: true},
   vision: { type: String },
   mission: { type: String },
   organization: { type: mongoose.Schema.Types.ObjectId, ref: 'Organization' },
@@ -23,8 +25,9 @@ const ProgramSchema = new mongoose.Schema({
   name: { type: String },
   owner: { type: String },
   description: { type: String },
-  departmentId: {type: mongoose.Schema.Types.ObjectId, ref: 'Department' }}
-);
+  departmentId: {type: mongoose.Schema.Types.ObjectId, ref: 'Department' },
+  pId: {type: Number, required: true, unique: true}
+});
 
 // Define Curriculum Schema
 const CurriculumSchema = new mongoose.Schema({

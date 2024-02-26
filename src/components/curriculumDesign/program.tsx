@@ -2,21 +2,24 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Program } from "@/models/schema";
+import { pid } from "process";
 
 export default function ProgramComponent() {
     const [name, setName] = useState("");
     const [owner, setOwner] = useState("");
     const [description, setDescription] = useState("");
+    const [deptId, setDeptId] = useState("");
+    const [pId, setPId] = useState("");
     const [programs, setPrograms] = useState([]);
     const router = useRouter();
 
     useEffect(() => {
         fetchPrograms();
-    }, []);
+    }, []); 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+ 
         if (!name) {
             alert("Name required.");
             return;
@@ -28,7 +31,7 @@ export default function ProgramComponent() {
                 headers: {
                     "Content-type": "application/json",
                 },
-                body: JSON.stringify({ name, owner, description }),
+                body: JSON.stringify({ name, owner, description, deptId: deptId, pId }),
             });
 
             if (res.ok) {
@@ -86,6 +89,22 @@ export default function ProgramComponent() {
                     placeholder="Description"
                 />
 
+                <input
+                    onChange={(e) => setDeptId(e.target.value)}
+                    value={deptId}
+                    className="border border-slate-500 px-8 py-2"
+                    type="text"
+                    placeholder="Enter existing Dept. Id only, to create a program"
+                />
+
+                <input
+                    onChange={(e) => setPId(e.target.value)}
+                    value={pId}
+                    className="border border-slate-500 px-8 py-2"
+                    type="text"
+                    placeholder="Enter Program Id"
+                />
+
                 <button
                     type="submit"
                     className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
@@ -102,6 +121,8 @@ export default function ProgramComponent() {
                             <span>{program.name}</span>
                             <span>{program.owner}</span>
                             <span>{program.description}</span>
+                            <span>{program.deptId}</span>
+                            <span>{program.pId}</span>
                             {/* You can add more details here */}
                         </li>
                     ))}
